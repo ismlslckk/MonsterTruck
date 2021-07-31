@@ -67,6 +67,9 @@ public class AndroidLauncher extends AndroidApplication implements InterfaceList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        Intent receiverIntent = new Intent(getApplicationContext(), MainReceiver.class);
+        sendBroadcast(receiverIntent);
+
         // run
         app = new Main(this);
         runOnUiThread(new Runnable() {
