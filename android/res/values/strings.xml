@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Beas Truck</string> <!-- App name -->
+
+    <!-- AdMob -->
+    <item name="show_admob" type="bool">false</item> <!-- Show AdMob (true/false) -->
+    <item name="admob_test" type="bool">false</item> <!-- AdMob test mode (true/false) -->
+    <string name="adMob_app_id">ca-app-pub-1310939234790483~8525448014</string> <!-- AdMob App ID -->
+    <string name="adMob_banner">ca-app-pub-1310939034790481/7741070432</string> <!-- AdMob Banner ID -->
+    <string name="adMob_interstitial">ca-app-pub-1310939134790482/1723457053</string> <!-- AdMob Interstitial ID -->
+
+    <!-- Google Play Games -->
+    <item name="connect_games" type="bool">true</item> <!-- Connect to the Google Play Games (true/false) -->
+    <string name="app_id">874825193742</string> <!-- Google Play Games App ID -->
+    <string name="leaderboard">CgkIjrKU_boZEAIQBw</string> <!-- Google Play Games Leaderboard ID -->
+    <string name="error_sign_in">Failed to sign in, check your network connection</string> <!-- Google Play Games sign in error -->
+    <string name="error_games_exists">Google Play Games is not available</string> <!-- No Google Play Games -->
+
+</resources>

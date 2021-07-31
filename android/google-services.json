@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661856899742",
+    "project_id": "beastruck-8be82",
+    "storage_bucket": "beastruck-8be82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661856899742:android:e03662eb975bb89b70a18f",
+        "android_client_info": {
+          "package_name": "com.app.beastruck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661856899742-38e4kop65a5374aglls5p2lcers4g8o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9LKnN5CdzAbMDCnNWxiQ-gk09xKZLJMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661856899742-38e4kop65a5374aglls5p2lcers4g8o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
