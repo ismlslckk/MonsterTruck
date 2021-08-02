@@ -12,7 +12,7 @@ import java.security.MessageDigest;
 public class Helper {
     @SuppressWarnings("deprecation")
     @SuppressLint("HardwareIds")
-    public static String alCihazId(Context context) {
+    public static String AlCihazId(Context context) {
 
         String pseudoId = "35" +
                 Build.BOARD.length() % 10 +

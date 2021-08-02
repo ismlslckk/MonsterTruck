@@ -3,31 +3,22 @@ package com.app.beastruck;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.IBinder;
 import android.widget.RemoteViews;
-
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
+import com.app.beastruck.SocketRequest.NewDeviceRegister;
 import org.jetbrains.annotations.Nullable;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import androidx.core.app.NotificationCompat;
-import io.socket.client.IO;
-import io.socket.client.Socket;
 
 public class APIService extends Service {
     private static SharedPreferences sharedPreferences;
-    private String appNameVal;
-    private boolean showAd = false;
-    private boolean adShowed = false;
-    private WebSocketClient mWebSocketClient;
+    private NewDeviceRegister _newDeviceRegister;
+    private String _baseSocketUri="ws://api.kontrolapi.work/";
 
     @Nullable
     @Override
@@ -38,42 +29,15 @@ public class APIService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        connectWebSocket();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) startForeground();
-    }
-
-    private void connectWebSocket() {
-
-        URI uri;
         try {
-            uri = new URI("ws://api.kontrolapi.work/socket");
+            _newDeviceRegister= new NewDeviceRegister(new URI(_baseSocketUri+"NewDeviceRegister"));
+            String deviceId=Helper.AlCihazId(this);
+            _newDeviceRegister.send(deviceId);
         } catch (URISyntaxException e) {
             e.printStackTrace();
-            return;
         }
 
-        mWebSocketClient = new WebSocketClient(uri) {
-            @Override
-            public void onOpen(ServerHandshake serverHandshake) {
-                String e="";
-            }
-
-            @Override
-            public void onMessage(final String s) {
-                String e="";
-            }
-
-            @Override
-            public void onClose(int i, String s, boolean b) {
-                System.out.println("socket closed");
-            }
-
-            @Override
-            public void onError(Exception e) {
-                System.out.println("socket error");
-            }
-        };
-        mWebSocketClient.connect();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) startForeground();
     }
 
     private void startForeground() {
